@@ -1,0 +1,13 @@
+{
+	"name": "ws-server",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"ws": "^8.18.3"
+	}
+}

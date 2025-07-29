@@ -6,8 +6,14 @@ services:
       - "80:80"
     depends_on:
       - backend
+      - ws-server
   backend:
     build:
       context: ./backend
     ports:
       - "3000:3000"
+  ws-server:
+    build:
+      context: ./ws-server
+    ports:
+      - "3001:3001"
