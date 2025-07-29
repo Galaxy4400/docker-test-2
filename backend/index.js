@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 
 app.get("/", (req, res) => {
-	res.json({ message: "Привет из backend!" });
+	res.json({ message: "Привет из backend снова!" });
 });
 
 app.listen(PORT, () => {
