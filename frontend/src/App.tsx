@@ -8,7 +8,7 @@ function App() {
 	const [string, setString] = useState("");
 
 	useEffect(() => {
-		fetch("http://localhost:3000")
+		fetch("/api")
 			.then((res) => res.json())
 			.then((data) => {
 				setString(data.message);
