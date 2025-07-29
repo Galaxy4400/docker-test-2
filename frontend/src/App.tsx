@@ -5,12 +5,13 @@ import "./App.css";
 
 function App() {
 	const [count, setCount] = useState(0);
+	const [string, setString] = useState("");
 
 	useEffect(() => {
 		fetch("http://localhost:3000")
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
+				setString(data.message);
 			});
 	}, []);
 
@@ -27,9 +28,7 @@ function App() {
 			<h1>Vite + React</h1>
 			<div className="card">
 				<button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
+				<p>{string}</p>
 			</div>
 			<p className="read-the-docs">Click on the Vite and React logos to learn more</p>
 		</>
