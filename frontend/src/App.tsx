@@ -10,6 +10,13 @@ function App() {
 	const [inputMessage, setInputMessage] = useState("");
 	const [messages, setMessages] = useState<Message[]>([]);
 	const socketRef = useRef<WebSocket | null>(null);
+	const [string, setString] = useState("");
+
+	useEffect(() => {
+		fetch("/api")
+			.then((res) => res.json())
+			.then((data) => setString(data.message));
+	}, []);
 
 	useEffect(() => {
 		const socket = new WebSocket(`http://${window.location.hostname}:3001`);
@@ -51,6 +58,7 @@ function App() {
 				<input type="text" value={inputMessage} onChange={(e) => setInputMessage(e.target.value)} />
 				<button onClick={sendHandler}>Отправить</button>
 			</div>
+			<div>{string}</div>
 		</div>
 	);
 }
